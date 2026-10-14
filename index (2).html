@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Digital marketing portfolio of Godfred Koranteng Annor, MSc Digital Marketing, University of Chester.">
+<title>Godfred Annor Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout concept: a fixed profile rail on the left, like a CV header, with each project set as a numbered-free case study on the right: brief, approach, findings, recommendations, then a ruled facts strip. */
+:root {
+  --bg: #F6F7F9;
+  --surface: #FFFFFF;
+  --ink: #0F1B2D;
+  --muted: #55627A;
+  --line: #DDE2EA;
+  --accent: #1F4E9C;
+  --accent-ink: #FFFFFF;
+  --tint: #EAF0FA;
+  --warn-bg: #FFF1B8;
+  --warn-ink: #5A4600;
+  --seg1: #1F4E9C;
+  --seg2: #0F1B2D;
+  --seg3: #8C9AB3;
+  --seg4: #B7791F;
+  --seg5: #5E6F8E;
+  --f-head: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1220; --surface: #121B2D; --ink: #E8EDF6; --muted: #9AA8C0; --line: #26324A;
+    --accent: #7FA6EA; --accent-ink: #0B1220; --tint: #172542;
+    --warn-bg: #4A3D0A; --warn-ink: #FFE9A0;
+    --seg1: #7FA6EA; --seg2: #C9D4EA; --seg3: #5E6F8E; --seg4: #E0A94A; --seg5: #8C9AB3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1220; --surface: #121B2D; --ink: #E8EDF6; --muted: #9AA8C0; --line: #26324A;
+  --accent: #7FA6EA; --accent-ink: #0B1220; --tint: #172542;
+  --warn-bg: #4A3D0A; --warn-ink: #FFE9A0;
+  --seg1: #7FA6EA; --seg2: #C9D4EA; --seg3: #5E6F8E; --seg4: #E0A94A; --seg5: #8C9AB3;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 17px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.page { max-width: 1180px; margin-inline: auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 56px; padding-top: 48px; }
+
+/* rail */
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 32px); align-self: start; display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+.id { display: flex; flex-direction: column; gap: 10px; }
+.monogram { width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-family: var(--f-head); font-weight: 700; font-size: 20px; letter-spacing: 0.02em; }
+.id h1 { font-family: var(--f-head); font-size: 1.9rem; line-height: 1.1; letter-spacing: -0.02em; font-weight: 700; text-wrap: balance; }
+.role-line { font-family: var(--f-head); font-weight: 500; color: var(--muted); font-size: 1rem; }
+.rail-list { display: flex; flex-direction: column; gap: 14px; font-family: var(--f-head); font-size: 0.92rem; }
+.rail-list div { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.lab { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.rail-list span { overflow-wrap: anywhere; }
+.nav { display: flex; flex-direction: column; gap: 2px; border-top: 1px solid var(--line); padding-top: 16px; font-family: var(--f-head); font-size: 0.95rem; }
+.nav a { color: var(--muted); text-decoration: none; padding: 5px 0; }
+.nav a:hover { color: var(--accent); }
+.ph { background: var(--warn-bg); color: var(--warn-ink); padding: 0 6px; border-radius: 3px; border: 1px dashed currentColor; font-family: var(--f-mono); font-size: 0.85em; }
+
+/* main */
+main { display: flex; flex-direction: column; gap: 72px; min-width: 0; }
+.intro { display: flex; flex-direction: column; gap: 18px; max-width: 66ch; }
+.intro .lead { font-size: 1.35rem; line-height: 1.5; }
+h2 { font-family: var(--f-head); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.015em; font-weight: 700; text-wrap: balance; }
+h3 { font-family: var(--f-mono); font-weight: 500; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.note { font-family: var(--f-head); font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.sec-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+
+/* overview table */
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-family: var(--f-head); font-size: 0.92rem; }
+th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--f-mono); font-weight: 500; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td a { font-weight: 600; text-decoration: none; }
+td a:hover { text-decoration: underline; }
+
+/* case study */
+.case { display: flex; flex-direction: column; gap: 28px; scroll-margin-top: 24px; }
+.case-head { display: flex; flex-direction: column; gap: 12px; padding-top: 28px; border-top: 2px solid var(--ink); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.case-head p { max-width: 66ch; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.col { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.97rem; line-height: 1.55; }
+.col li { padding-left: 16px; position: relative; }
+.col li::before { content: ""; position: absolute; left: 0; top: 0.75em; width: 7px; height: 2px; background: var(--accent); }
+.facts { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 22px 24px; display: flex; flex-direction: column; gap: 18px; }
+.row { display: flex; flex-direction: column; gap: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-family: var(--f-mono); font-size: 12.5px; padding: 3px 10px; border-radius: 4px; background: var(--bg); border: 1px solid var(--line); }
+.chip.target { background: var(--tint); border-color: var(--accent); }
+
+.bar { display: flex; height: 16px; border-radius: 4px; overflow: hidden; border: 1px solid var(--line); }
+.bar i { display: block; height: 100%; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--f-mono); font-size: 12.5px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend b { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.stat { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.stat strong { font-family: var(--f-head); font-size: 2.4rem; line-height: 1; letter-spacing: -0.02em; color: var(--accent); font-weight: 700; }
+.stat span { font-family: var(--f-head); font-size: 0.9rem; color: var(--muted); line-height: 1.45; }
+
+/* background */
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.entry { display: flex; flex-direction: column; gap: 2px; padding-bottom: 16px; }
+.entry + .entry { border-top: 1px solid var(--line); padding-top: 16px; }
+.entry strong { font-family: var(--f-head); font-weight: 600; }
+.entry small { font-size: 0.95rem; color: var(--muted); line-height: 1.55; }
+.contact { display: flex; flex-direction: column; gap: 10px; font-family: var(--f-mono); font-size: 14px; overflow-wrap: anywhere; }
+footer { font-family: var(--f-head); font-size: 0.82rem; color: var(--muted); max-width: 75ch; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 920px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-top: 32px; }
+  .rail { position: static; }
+  .nav { flex-direction: row; flex-wrap: wrap; gap: 4px 18px; }
+  .grid3, .stats, .two { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  main { gap: 56px; }
+}
+</style>
+
+</head>
+<body>
+<div class="page">
+  <aside class="rail" aria-label="Profile">
+    <div class="id">
+      <div class="monogram" aria-hidden="true">GA</div>
+      <h1>Godfred Koranteng Annor</h1>
+      <p class="role-line">Digital marketing graduate, MSc</p>
+    </div>
+    <div class="rail-list">
+      <div><span class="lab">Based in</span><span>Bury, Greater Manchester</span></div>
+      <div><span class="lab">Looking for</span><span>E-commerce, CRM and digital marketing executive roles</span></div>
+      <div><span class="lab">Email</span><span>Godfredannor80@gmail.com</span></div>
+      <div><span class="lab">Phone</span><span>07909 322507</span></div>
+      <div><span class="lab">Certifications</span><span>Coursera data analysis programme, 7 of 9 courses completed. <a href="https://coursera.org/share/b7c9d14a0e37705454d7231ae898674a">View certificate</a></span></div>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Selected work</a>
+      <a href="#etsy">Etsy</a>
+      <a href="#nike">Nike</a>
+      <a href="#absa">ABSA Bank Ghana</a>
+      <a href="#dissertation">Dissertation</a>
+      <a href="#background">Background</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="intro">
+      <h3>Portfolio</h3>
+      <p class="lead">Four pieces of postgraduate work covering e-commerce, social media, integrated communications and consumer research, plus customer-facing experience from Ghana.</p>
+      <p>I completed an MSc in Digital Marketing at the University of Chester (2024), after a Bachelor of Commerce in Marketing at the University of Cape Coast. Each project below sets out the brief, what I did, what I found and what I recommended.</p>
+      <p class="note">All four projects are independent academic work. None was run for, or with, the companies named, and no affiliation is implied.</p>
+    </section>
+
+    <section id="work" aria-labelledby="work-h">
+      <div class="sec-head"><h2 id="work-h">Selected work</h2></div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Project</th><th>Focus</th><th>Methods and tools</th></tr></thead>
+          <tbody>
+            <tr><td><a href="#etsy">Etsy</a></td><td>Acquisition, conversion, retention</td><td>PESTEL, Porter's Five Forces, SWOT, 5Ss, Website Grader</td></tr>
+            <tr><td><a href="#nike">Nike</a></td><td>Integrated communications plan</td><td>PESTEL, SWOT, SMART objectives, segmentation</td></tr>
+            <tr><td><a href="#absa">ABSA Bank Ghana</a></td><td>Social media strategy</td><td>SOSTAC, 5Ss, STOP, SWOT, PESTEL, BuzzSumo</td></tr>
+            <tr><td><a href="#dissertation">Dissertation</a></td><td>Sustainability and brand loyalty in UK fashion</td><td>Survey of 100 consumers, IBM SPSS 25</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <article id="etsy" class="case" aria-labelledby="etsy-h">
+      <header class="case-head">
+        <div class="meta"><span>MSc coursework</span><span>2024</span><span>Acquisition, Retention and Conversion</span></div>
+        <h2 id="etsy-h">Etsy: acquisition, retention and conversion plan</h2>
+        <p>An audit of Etsy's website, social media, email and advertising, followed by a plan to attract more buyers, convert more visits into orders and keep customers coming back.</p>
+      </header>
+      <div class="grid3">
+        <div class="col"><h3>What I did</h3><ul>
+          <li>Audited the website with Website Grader and compared social engagement with follower numbers.</li>
+          <li>Reviewed email and community features, then ran PESTEL, Porter's Five Forces and SWOT analyses.</li>
+          <li>Set Serve, Sizzle and Save objectives from the 5Ss model and built an Online Value Proposition around convenience, choice and community.</li></ul></div>
+        <div class="col"><h3>What I found</h3><ul>
+          <li>Weak mobile optimisation and page speed, in a market where most shoppers use phones.</li>
+          <li>Low social engagement for the size of the following.</li>
+          <li>No email referral programme for existing customers.</li></ul></div>
+        <div class="col"><h3>What I recommended</h3><ul>
+          <li>Mobile-first design, image optimisation and A/B tests on layouts and checkout.</li>
+          <li>Influencer partnerships, shoppable social posts and seller stories.</li>
+          <li>Email referral and loyalty rewards, plus remarketing to abandoned carts.</li></ul></div>
+      </div>
+      <div class="facts">
+        <div class="row"><h3>Frameworks</h3><div class="chips"><span class="chip">5Ss</span><span class="chip">PESTEL</span><span class="chip">Porter's Five Forces</span><span class="chip">SWOT</span><span class="chip">Online Value Proposition</span></div></div>
+        <div class="row"><h3>KPIs and proposed targets</h3><div class="chips"><span class="chip">Conversion rate</span><span class="chip">CAC</span><span class="chip">CLV</span><span class="chip">Social engagement</span><span class="chip target">20% faster customer replies in 6 to 8 months</span><span class="chip target">20% wider online reach</span><span class="chip target">25% higher retention in 3 months</span></div></div>
+        <p class="note">Targets are proposals from the plan. The campaign was not run.</p>
+      </div>
+    </article>
+
+    <article id="nike" class="case" aria-labelledby="nike-h">
+      <header class="case-head">
+        <div class="meta"><span>MSc coursework</span><span>2024</span><span>Digital Marketing Strategy and Planning</span></div>
+        <h2 id="nike-h">Nike: digital marketing communications plan</h2>
+        <p>An integrated plan to raise online engagement, retention and sales for Nike, built from a review of its website, app and social channels.</p>
+      </header>
+      <div class="grid3">
+        <div class="col"><h3>What I did</h3><ul>
+          <li>Analysed technology factors with PESTEL and evaluated the website, app and social channels in a SWOT.</li>
+          <li>Segmented the audience (18 to 35 primary, 35 to 50 secondary, across North America, Europe and Asia-Pacific) and set the positioning.</li>
+          <li>Wrote SMART objectives and a risk and evaluation plan.</li></ul></div>
+        <div class="col"><h3>What I found</h3><ul>
+          <li>A strong brand and social following.</li>
+          <li>Slow page loading that risks lost conversions.</li>
+          <li>A need for more personalised and interactive content to deepen engagement.</li></ul></div>
+        <div class="col"><h3>What I recommended</h3><ul>
+          <li>An integrated mix: social, content, email, SEO and website, paid search, influencer, mobile, video and interactive.</li>
+          <li>Email segmentation with automated sequences for onboarding, abandoned carts and post-purchase.</li>
+          <li>Sustainability messaging and monthly reviews with A/B testing.</li></ul></div>
+      </div>
+      <div class="facts">
+        <div class="row"><h3>Frameworks</h3><div class="chips"><span class="chip">PESTEL</span><span class="chip">SWOT</span><span class="chip">SMART objectives</span><span class="chip">Segmentation and positioning</span><span class="chip">Online Value Proposition</span></div></div>
+        <div class="row"><h3>KPIs in the measurement plan</h3><div class="chips"><span class="chip">CTR</span><span class="chip">Conversion rate</span><span class="chip">Bounce rate</span><span class="chip">Average order value</span><span class="chip">CLV</span><span class="chip">CPC</span><span class="chip">ROAS</span><span class="chip">Engagement rate</span></div></div>
+      </div>
+    </article>
+
+    <article id="absa" class="case" aria-labelledby="absa-h">
+      <header class="case-head">
+        <div class="meta"><span>MSc coursework</span><span>2024</span><span>Framework: SOSTAC</span></div>
+        <h2 id="absa-h">ABSA Bank Ghana: social media strategy</h2>
+        <p>A social media audit and a four-week campaign plan for a Ghanaian bank, with sample creatives, a content calendar and a hypothetical budget.</p>
+      </header>
+      <div class="grid3">
+        <div class="col"><h3>What I did</h3><ul>
+          <li>Audited Facebook, X and Instagram, and compared the bank with GCB, Stanbic, Ecobank and MTN Mobile Money.</li>
+          <li>Ran SWOT and PESTEL analyses and set Sell, Serve, Speak, Save and Sizzle objectives.</li>
+          <li>Used the STOP model to define segments, targets and positioning, then drafted a four-week content plan.</li></ul></div>
+        <div class="col"><h3>What I found</h3><ul>
+          <li>Low engagement and an irregular posting schedule.</li>
+          <li>Content that leaned on product promotion, with little interactive or educational material.</li>
+          <li>Slow or missing replies to customer questions, and no distinct voice across channels.</li></ul></div>
+        <div class="col"><h3>What I recommended</h3><ul>
+          <li>A mix of financial education, customer stories and CSR content, posted at least three times a week per platform.</li>
+          <li>Prompt replies, polls, quizzes and user-generated content with branded hashtags.</li>
+          <li>Influencer and community partnerships, with live Q&amp;A sessions and a webinar.</li></ul></div>
+      </div>
+      <div class="facts">
+        <div class="row">
+          <h3>Hypothetical campaign budget: $10,000</h3>
+          <div class="bar" role="img" aria-label="Budget split: content creation 30 percent, advertising 40 percent, tools 6 percent, influencers 15 percent, legal and contingency 9 percent">
+            <i style="width:30%; background:var(--seg1)"></i><i style="width:40%; background:var(--seg2)"></i><i style="width:6%; background:var(--seg3)"></i><i style="width:15%; background:var(--seg4)"></i><i style="width:9%; background:var(--seg5)"></i>
+          </div>
+          <div class="legend">
+            <span><b style="background:var(--seg1)"></b>Content $3,000</span>
+            <span><b style="background:var(--seg2)"></b>Advertising $4,000</span>
+            <span><b style="background:var(--seg3)"></b>Tools $600</span>
+            <span><b style="background:var(--seg4)"></b>Influencers $1,500</span>
+            <span><b style="background:var(--seg5)"></b>Legal and contingency $900</span>
+          </div>
+        </div>
+        <div class="row"><h3>Proposed targets</h3><div class="chips"><span class="chip target">Replies within 2 hours in business hours</span><span class="chip target">20% more online loan applications in 6 months</span><span class="chip target">30% follower growth and doubled engagement in a year</span></div></div>
+        <div class="row"><h3>Frameworks</h3><div class="chips"><span class="chip">SOSTAC</span><span class="chip">5Ss</span><span class="chip">STOP</span><span class="chip">SWOT</span><span class="chip">PESTEL</span></div></div>
+        <p class="note">Budget figures and targets are proposals. The campaign was not run.</p>
+      </div>
+    </article>
+
+    <article id="dissertation" class="case" aria-labelledby="diss-h">
+      <header class="case-head">
+        <div class="meta"><span>MSc dissertation</span><span>2024</span><span>Theory of Planned Behaviour</span><span>Stimuli-Organism-Response</span></div>
+        <h2 id="diss-h">Sustainable practices, brand loyalty and purchase behaviour in UK fashion</h2>
+        <p>Primary research into how sustainability practices influence loyalty and buying decisions among UK fashion consumers.</p>
+      </header>
+      <div class="stats">
+        <div class="stat"><strong>100</strong><span>UK fashion consumers, screened against set criteria (purposive sampling)</span></div>
+        <div class="stat"><strong>80%+</strong><span>of respondents viewed sustainability practices favourably for repeat purchases, recommendations and emotional connection</span></div>
+        <div class="stat"><strong>SPSS 25</strong><span>Google Forms survey, analysed with descriptive statistics</span></div>
+      </div>
+      <div class="grid3">
+        <div class="col"><h3>What I did</h3><ul>
+          <li>Designed and ran an online survey in Google Forms.</li>
+          <li>Analysed responses in IBM SPSS Statistics 25.</li>
+          <li>Framed results with the Theory of Planned Behaviour and the Stimuli-Organism-Response model.</li></ul></div>
+        <div class="col"><h3>What I found</h3><ul>
+          <li>Brand trust and perceived CSR emerged as key factors linking sustainability to loyalty.</li>
+          <li>Fair labour practices and sustainable packaging had the strongest influence on purchase decisions.</li>
+          <li>Respondents hesitated to pay premium prices for sustainable materials.</li></ul></div>
+        <div class="col"><h3>What I recommended</h3><ul>
+          <li>Loyalty programmes that reward sustainable choices, such as extra points for recycled items and clothing returns.</li>
+          <li>Transparent pricing that explains the cost of sustainable materials.</li>
+          <li>Educational content on durability and long-term value.</li></ul></div>
+      </div>
+      <p class="note">The sample was purposive, so the results describe these 100 respondents and not the whole UK market. Future work could test the relationships with inferential methods.</p>
+    </article>
+
+    <section id="background" aria-labelledby="bg-h">
+      <div class="sec-head"><h2 id="bg-h">Background</h2></div>
+      <div class="two">
+        <div class="col">
+          <h3>Experience</h3>
+          <div>
+            <div class="entry"><strong>Customer Care Representative</strong><small>MultiChoice Ghana Ltd (pay-TV provider), Accra. Outbound calls promoting DStv and GOtv offers, sharing new content and reminding customers about subscription renewals.</small></div>
+            <div class="entry"><strong>Customer Service &amp; Admin Assistant</strong><small>P.K. Annor Enterprise (car dealer), Accra, Nov 2021 to May 2022. Handled customer queries by phone and email, wrote customer correspondence and kept records updated.</small></div>
+          </div>
+        </div>
+        <div class="col">
+          <h3>Education</h3>
+          <div>
+            <div class="entry"><strong>MSc Digital Marketing</strong><small>University of Chester, 2024</small></div>
+            <div class="entry"><strong>Bachelor of Commerce in Marketing</strong><small>University of Cape Coast, Ghana, 2017 to 2021</small></div>
+          </div>
+          <h3>Skills</h3>
+          <div class="chips"><span class="chip">E-commerce and conversion</span><span class="chip">Email and CRM strategy</span><span class="chip">Social media strategy</span><span class="chip">Content planning</span><span class="chip">Competitor analysis</span><span class="chip">Survey research</span><span class="chip">SPSS</span><span class="chip">Google Analytics 4</span></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Project work is independent university coursework from the MSc Digital Marketing at the University of Chester. Company names belong to their owners, and no affiliation or endorsement is implied.
+    </footer>
+  </main>
+</div>
+</body>
+</html>
